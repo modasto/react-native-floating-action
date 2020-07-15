@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { StyleSheet, Text, Image, View, Animated } from "react-native";
@@ -15,7 +16,8 @@ class FloatingActionItem extends Component {
 
     if (prevProps.active !== active && animated) {
       Animated.spring(this.animation, {
-        toValue: active ? 1 : 0
+        toValue: active ? 1 : 0,
+        useNativeDriver: false
       }).start();
     }
   }
